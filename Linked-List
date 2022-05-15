@@ -1,0 +1,30 @@
+import java.util.Scanner;
+class Node{
+    int data;
+    Node next;
+}
+public class Main
+{
+    static Scanner scan = new Scanner(System.in);
+	public static void main(String[] args) {
+	    Node head,middle,last;
+	    head = new Node();
+	    middle = new Node();
+	    last = new Node();
+        
+        head.data = scan.nextInt();
+        middle.data = scan.nextInt();
+        last.data = scan.nextInt();
+        
+        head.next = middle;
+        middle.next = last;
+        last.next = null;
+        
+        System.out.println("The linked list elements are:");
+        Node temp = head;
+        while(temp!=null){
+            System.out.println(temp.data);
+            temp = temp.next;
+        }
+	}
+}
