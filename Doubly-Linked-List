@@ -95,14 +95,28 @@ class Main{
 	
     static void print(){
         Node temp = head;
+        Node revTemp = temp;
         if(temp==null){
             System.out.println("No data in the linked list");
             return;
         }
-        System.out.println("Data stored in linked list are:");
+	
+	// Print data in Forward Direction
+	
+        System.out.println("Data stored in linked list are (Forward direction):");
         while(temp!=null){
             System.out.println(temp.data);
+            revTemp = temp;
             temp = temp.next;
+        }
+	
+	// Print Data in Backward Direction
+	
+        temp = revTemp;
+        System.out.println("Data stored in linked list are (Backward direction):");
+        while(temp!=null){
+            System.out.println(temp.data);
+            temp = temp.prev;
         }
     }
 	
