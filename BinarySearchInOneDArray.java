@@ -1,5 +1,5 @@
 import java.util.*;
-public class Main {
+public class BinarySearchInOneDArray {
     static int coun = 0;
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
