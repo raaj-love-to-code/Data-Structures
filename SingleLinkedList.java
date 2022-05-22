@@ -9,7 +9,7 @@ class Node{
 
 //Main Class
 
-class Main{
+class SingleLinkedList{
     static Node head;
 	
 	//Function to add First element when there is no element in Linked List
