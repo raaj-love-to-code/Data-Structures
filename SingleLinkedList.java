@@ -9,20 +9,20 @@ class Node{
 
 //Main Class
 
-class SingleLinkedList{
+class Main{
     static Node head;
-	
-	//Function to add First element when there is no element in Linked List
-	
+
+    //Function to add First element when there is no element in Linked List
+
     static void firstElement(int data){
-       System.out.println("It is the first element of the linked list");
-       head = new Node();
-       head.data = data;
-       head.next = null;
+        System.out.println("It is the first element of the linked list");
+        head = new Node();
+        head.data = data;
+        head.next = null;
     }
-	
-	// Function to add element at last
-	
+
+    // Function to add element at last
+
     static void addLast(int data){
         if(head==null){
             firstElement(data);
@@ -38,24 +38,24 @@ class SingleLinkedList{
         temp.next = newNode;
         System.out.println("Data added to last successfully");
     }
-	
-	//Function to add element at starting
-	
+
+    //Function to add element at starting
+
     static void addFirst(int data){
         Node newNode = new Node();
         newNode.data = data;
         if(head==null){
             firstElement(data);
             return;
-        }else{ 
+        }else{
             newNode.next = head;
             head = newNode;
         }
         System.out.println("Data added successfully at first");
     }
-	
-	//Function to delete the element
-	
+
+    //Function to delete the element
+
     static void delete(int data){
         Node temp = head;
         if(temp.data == data){
@@ -64,15 +64,16 @@ class SingleLinkedList{
         while(temp.next!=null){
             if(temp.next.data==data){
                 temp.next = temp.next.next;
-                break;
+                System.out.println("Deleted data "+data+" successfully");
+                return;
             }
             temp = temp.next;
         }
-        System.out.println("Deleted data "+data+" successfully");
+        System.out.println(data + " not found in the linked list");
     }
-    
-   	 //Function to Search the element
-    
+
+    //Function to Search the element
+
     static void search(int data){
         Node temp = head;
         while(temp!=null){
@@ -84,9 +85,9 @@ class SingleLinkedList{
         }
         System.out.println("Data not found");
     }
-	
-	//Function to print the Data in the Linked List
-	
+
+    //Function to print the Data in the Linked List
+
     static void print(){
         Node temp = head;
         if(temp==null){
@@ -99,9 +100,9 @@ class SingleLinkedList{
             temp = temp.next;
         }
     }
-	
-	//Main Function
-	
+
+    //Main Function
+
     public static void main(String args[]){
         Scanner scan = new Scanner(System.in);
         while(true){
@@ -115,7 +116,7 @@ class SingleLinkedList{
                     int d = scan.nextInt();
                     addFirst(d);
                     break;
-                case 3: 
+                case 3:
                     d = scan.nextInt();
                     addLast(d);
                     break;
