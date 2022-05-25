@@ -101,12 +101,37 @@ class Main{
         }
     }
 
+    //Function to find and print the middle element in the linked list
+
+    static void findMiddleElement(){
+        Node n1 = head,n2 = head;
+        if(head==null) {
+            System.out.println("No data found");
+            return;
+        }
+        boolean even = false;
+        while(n1.next!=null&&n2.next!=null){
+            n2 = n2.next;
+            if(n2.next!=null)
+                n2 = n2.next;
+            else {
+                System.out.print("There are two middle elements : " + n1.data + " and ");
+                even = true;
+            }
+            n1 = n1.next;
+        }
+        if(even)
+            System.out.println(n1.data);
+        else
+            System.out.println("Middle element = "+n1.data);
+    }
+
     //Main Function
 
     public static void main(String args[]){
         Scanner scan = new Scanner(System.in);
         while(true){
-            System.out.println("Enter the command:\n1 - print\n2 - addFirst\n3 - addLast\n4 - delete\n5 - Search\n6 - Exit");
+            System.out.println("Enter the command:\t1 - print\t2 - addFirst\t3 - addLast\t4 - delete\t5 - Search\t6 - Middle\t7 - Exit");
             int n = scan.nextInt();
             switch (n){
                 case 1:
@@ -129,11 +154,15 @@ class Main{
                     search(d);
                     break;
                 case 6:
+                    findMiddleElement();
+                    break;
+                case 7:
                     scan.close();
                     return;
                 default:
                     System.out.println("Type a valid command");
             }
+            System.out.println("--------------------------------");
         }
     }
 }
